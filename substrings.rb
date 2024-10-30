@@ -16,9 +16,14 @@
 # Recall how to turn strings into arrays and arrays into strings.
 
 def substrings(word, array)
-
+  hash = {}
+  word_array = word.chars
+  word_array.each do |char|
+    puts char
+  end
+end
   # Declare an empty hash
-  # Turn the word into an array
+  # Turn the word into an array & store in a variable 
   # Iterate over the array to
     # 1. Return every possible substring by joining each element one by one per iteration
     # 2. Iterate over the array to check if it includes any of the substrings
@@ -26,4 +31,3 @@ def substrings(word, array)
         # store the tally in a variable count
     # 4. Assign hash[:word][:count]
   # Return the hash
-end
