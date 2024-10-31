@@ -21,19 +21,22 @@ def substrings(word, array)
   # Write code to split the 'word' into an array of each individual word
   p multi_word_array = word.downcase.split(' ')
   # Use the original logic to deal with each individual word from above
-  single_word_array = word.downcase.chars
-  single_word_array.each do |char|
-    char_index = single_word_array.index {|element| element == char }
+  multi_word_array.each do |single_word|
+    single_word_array = word.downcase.chars
+    single_word_array.each do |char|
+      char_index = single_word_array.index {|element| element == char }
     char_index
-    sub_word_str = single_word_array[0..char_index].join
-    reverse_sub_word_str = single_word_array[char_index..-1].join
-    substring_array.push(sub_word_str).push(reverse_sub_word_str)
-  end
-  substring_array.each do |substring| 
-    array.include?(substring)
-    count = array.count(substring)
-    if count > 0
-      hash[substring] = count
+      sub_word_str = single_word_array[0..char_index].join
+      reverse_sub_word_str = single_word_array[char_index..-1].join
+      substring_array.push(sub_word_str).push(reverse_sub_word_str)
+    end
+    substring_array.each do |substring| 
+      array.include?(substring)
+      p count = array.count(substring)
+      if count > 0
+        p'Yes'
+        p hash[substring] = count
+      end
     end
   end
   return hash
