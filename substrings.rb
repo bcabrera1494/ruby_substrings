@@ -22,8 +22,8 @@ def substrings(word, array)
   word_array.each do |char|
     char_index = word_array.index {|element| element == char }
     char_index
-     sub_word_str = word_array[0..char_index].join
-     reverse_sub_word_str = word_array[char_index..-1].join
+    sub_word_str = word_array[0..char_index].join
+    reverse_sub_word_str = word_array[char_index..-1].join
     if array.include?(sub_word_str) && array.include?(reverse_sub_word_str) == false
       count = array.count(sub_word_str)
       hash[sub_word_str] = count
