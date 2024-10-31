@@ -23,10 +23,10 @@ def substrings(word, array)
   # Use the original logic to deal with each individual word from above
   single_word_array = word.downcase.chars
   single_word_array.each do |char|
-    char_index = word_array.index {|element| element == char }
+    char_index = single_word_array.index {|element| element == char }
     char_index
-    sub_word_str = word_array[0..char_index].join
-    reverse_sub_word_str = word_array[char_index..-1].join
+    sub_word_str = single_word_array[0..char_index].join
+    reverse_sub_word_str = single_word_array[char_index..-1].join
     substring_array.push(sub_word_str).push(reverse_sub_word_str)
   end
   substring_array.each do |substring| 
