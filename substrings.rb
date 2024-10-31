@@ -19,7 +19,9 @@ def substrings(word, array)
   hash = {}
   word_array = word.chars
   word_array.each do |char|
-    puts char
+    char_index = word_array.index {|element| element == char }
+    p char_index
+    p word_array[0..char_index].join
   end
 end
   # Declare an empty hash
