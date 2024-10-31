@@ -24,24 +24,18 @@ def substrings(word, array)
     char_index
     sub_word_str = word_array[0..char_index].join
     reverse_sub_word_str = word_array[char_index..-1].join
-    if array.include?(sub_word_str) && array.include?(reverse_sub_word_str) == false
-      count = array.count(sub_word_str)
-      hash[sub_word_str] = count
-      return hash
-    elsif array.include?(reverse_sub_word_str) && array.include?(sub_word_str) == false
-      reverse_count = array.count(sub_word_str)
-      hash[reverse_sub_word_str] = reverse_count
-      hash[reverse_sub_word_str] = reverse_count
-      return hash
-    elsif array.include?(sub_word_str) && array.include?(reverse_sub_word_str)
-       count = array.count(sub_word_str)
-      p reverse_count = array.count(reverse_sub_word_str)
-      hash[sub_word_str] = count
-      hash[reverse_sub_word_str] = reverse_count
-      return hash
+    substring_array.push(sub_word_str).push(reverse_sub_word_str)
+  end
+  substring_array.each do |substring| 
+    array.include?(substring)
+    count = array.count(substring)
+    if count > 0
+      hash[substring] = count
     end
   end
+  return hash
 end
+
   # Declare an empty hash
   # Turn the word into an array & store in a variable 
   # Iterate over the array to
