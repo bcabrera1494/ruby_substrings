@@ -17,6 +17,7 @@
 
 def substrings(word, array)
   hash = {}
+  substring_array = []
   word_array = word.chars
   word_array.each do |char|
     char_index = word_array.index {|element| element == char }
