@@ -18,8 +18,11 @@
 def substrings(word, array)
   hash = {}
   substring_array = []
-  word_array = word.chars.downcase
-  word_array.each do |char|
+  # Write code to split the 'word' into an array of each individual word
+  p multi_word_array = word.downcase.split(' ')
+  # Use the original logic to deal with each individual word from above
+  single_word_array = word.chars.downcase
+  single_word_array.each do |char|
     char_index = word_array.index {|element| element == char }
     char_index
     sub_word_str = word_array[0..char_index].join
