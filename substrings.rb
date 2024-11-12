@@ -34,7 +34,7 @@ def substrings(word, array)
     end
     substring_array.each do |substring| # For each substring in the substring array
       array.include?(substring) # Check if the array includes the substring
-       count = array.count(substring) # Create a count variable that tallies the occurences of the substring in the array 
+      p count = array.count(substring) # Create a count variable that tallies the occurences of the substring in the array 
       if count > 0 # If the count is greater than 0
          hash[substring] = count # assign the hash[substring] to equal the count 
       end
