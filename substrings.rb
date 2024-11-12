@@ -32,7 +32,8 @@ def substrings(word, array)
       substring_array.push(sub_word_str).push(reverse_sub_word_str) # Push the sub word string and the reverse sub word string to the substring array
       substring_array
     end
-    substring_array.each do |substring| # For each substring in the substring array
+    p filtered_substring_array = substring_array.select {|substring| array.include?(substring)}
+    filtered_substring_array.each do |substring| # For each substring in the substring array
       array.include?(substring) # Check if the array includes the substring
       p count = array.count(substring) # Create a count variable that tallies the occurences of the substring in the array 
       if count > 0 # If the count is greater than 0
