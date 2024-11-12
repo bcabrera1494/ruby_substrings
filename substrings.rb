@@ -23,7 +23,7 @@ def substrings(word, array)
   multi_word_array
   # Use the original logic to deal with each individual word from above
   multi_word_array.each do |single_word| # For each single word within the multi word array, 
-  p  single_word_array = word.downcase.chars.select {|element| element != " " && element != "'" && element != "?" && element != "." && element != "!" && element != ","} # Convert the word into downcase, split the word into an array of its letters
+    p single_word_array = single_word.downcase.chars.select {|element| element != " " && element != "'" && element != "?" && element != "." && element != "!" && element != ","} # Convert the word into downcase, split the word into an array of its letters, filter out punctuation and spaces
     single_word_array.each do |char| # For each letter in the single word array 
       char_index = single_word_array.index {|element| element == char } # This is the character index
       char_index
