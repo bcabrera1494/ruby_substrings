@@ -18,28 +18,27 @@
 def substrings(word, array)
   hash = {}
   substring_array = []
-  # Write code to split the 'word' into an array of each individual word
+  # Write code to split the 'word' into an array of each individual words
   p multi_word_array = word.downcase.split(' ')
   # Use the original logic to deal with each individual word from above
-  multi_word_array.each do |single_word|
-    single_word_array = word.downcase.chars
-    single_word_array.each do |char|
-      char_index = single_word_array.index {|element| element == char }
-    char_index
-      sub_word_str = single_word_array[0..char_index].join
-      reverse_sub_word_str = single_word_array[char_index..-1].join
-      substring_array.push(sub_word_str).push(reverse_sub_word_str)
+  multi_word_array.each do |single_word| # For each single word within the multi word array, 
+    single_word_array = word.downcase.chars # Convert the word into downcase, split the word into an array of its letters
+    single_word_array.each do |char| # For each letter in the single word array 
+      char_index = single_word_array.index {|element| element == char } # This is the character index
+      sub_word_str = single_word_array[0..char_index].join # Join the letters from 0 until the character index to create a substring to test
+      reverse_sub_word_str = single_word_array[char_index..-1].join # Join the letters from the character index until the last index to create a reverse substring to test
+      substring_array.push(sub_word_str).push(reverse_sub_word_str) # Push the sub word string and the reverse sub word string to the substring array
+      substring_array # Return the substring array
     end
-    substring_array.each do |substring| 
-      array.include?(substring)
-      p count = array.count(substring)
-      if count > 0
-        p'Yes'
-        p hash[substring] = count
+    substring_array.each do |substring| # For each substring in the substring array
+      array.include?(substring) # Check if the array includes the substring
+      p count = array.count(substring) # Create a count variable that tallies the occurences of the substring in the array 
+      if count > 0 # If the count is greater than 0
+        p hash[substring] = count # assign the hash[substring] to equal the count 
       end
     end
   end
-  return hash
+  return hash # return the hash
 end
 
   # Declare an empty hash
