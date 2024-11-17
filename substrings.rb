@@ -30,19 +30,16 @@ def substrings(word, array)
       sub_word_str = single_word_array[0..char_index].join # Join the letters from 0 until the character index to create a substring to test
       reverse_sub_word_str = single_word_array[char_index..-1].join # Join the letters from the character index until the last index to create a reverse substring to test
       substring_array.push(sub_word_str).push(reverse_sub_word_str) # Push the sub word string and the reverse sub word string to the substring array
-      substring_array
-    end
-    p filtered_substring_array = substring_array.select {|substring| array.include?(substring)}
-    filtered_substring_array.each do |substring| # For each substring in the substring array
-      array.include?(substring) # Check if the array includes the substring
-      p count = array.count(substring) # Create a count variable that tallies the occurences of the substring in the array 
-      if count > 0 # If the count is greater than 0
-         hash[substring] = count # assign the hash[substring] to equal the count 
+      filtered_substring_array = substring_array.uniq.select {|substring| array.include?(substring)} # Check if the array includes the substring and select only included substrings
+      filtered_substring_array.each do |substring| # For each substring in the substring array
+        p count = single_word_array.count(substring) + array.count(substring) # Create a count variable that tallies the occurences of the substring in the array 
+        hash[substring] = count # assign the hash[substring] to equal the count 
+        end
       end
     end
+    return hash # return the hash
   end
-  return hash # return the hash
-end
+
 
   # Declare an empty hash
   # Turn the word into an array & store in a variable 
