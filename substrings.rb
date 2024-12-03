@@ -16,36 +16,15 @@
 # Recall how to turn strings into arrays and arrays into strings.
 
 def substrings(word, array)
+  # Declare an empty hash
   hash = {}
-  substring_array = []
-  # Write code to split the 'word' into an array of each individual words
-  multi_word_array = word.downcase.split(' ')
-  multi_word_array
-  # Use the original logic to deal with each individual word from above
-  multi_word_array.each do |single_word| # For each single word within the multi word array, 
-    p single_word_array = single_word.downcase.chars.select {|element| element != " " && element != "'" && element != "?" && element != "." && element != "!" && element != ","} # Convert the word into downcase, split the word into an array of its letters, filter out punctuation and spaces
-    single_word_array.each do |char| # For each letter in the single word array 
-      char_index = single_word_array.index {|element| element == char } # This is the character index
-      char_index
-      sub_word_str = single_word_array[0..char_index].join # Join the letters from 0 until the character index to create a substring to test
-      reverse_sub_word_str = single_word_array[char_index..-1].join # Join the letters from the character index until the last index to create a reverse substring to test
-      substring_array.push(sub_word_str).push(reverse_sub_word_str) # Push the sub word string and the reverse sub word string to the substring array
-      filtered_substring_array = substring_array.select {|substring| array.include?(substring)} # Check if the array includes the substring and select only included substrings
-      filtered_substring_array.each do |substring| # For each substring in the substring array
-        count = single_word_array.count(substring) + array.count(substring) # Create a count variable that tallies the occurences of the substring in the array 
-        hash[substring] = count # assign the hash[substring] to equal the count 
-        end
-      end
-    end
-    return hash # return the hash
-  end
-
-
+  # Turn the word into an array & store in a variable 
+ 
   # Declare an empty hash
   # Turn the word into an array & store in a variable 
   # Iterate over the array to
-    # 1. Return every possible substring by joining each element one by one per iteration
-    # 2. Iterate over the array to check if it includes any of the substrings
+    # 1. Return every possible substring using #partition method
+    # 2. Iterate over the array to check if it includes any of the substrings #scan method
     # 3. If the word is included, start a tally usind #count for how many times it is included in the array
         # store the tally in a variable count
     # 4. Assign hash[:word][:count]
