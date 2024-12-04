@@ -19,10 +19,22 @@ def substrings(word, array)
   # Declare an empty hash
   hash = {}
   # Turn the word into an array & store in a variable 
- 
-  # Declare an empty hash
-  # Turn the word into an array & store in a variable 
+  multi_word_array = word.downcase.split(' ')
   # Iterate over the array to
+  array_to_string = array.join
+  multi_word_array.each do |word|
+    word.tr!('^A-Za-z0-9', '')
+    p word
+    array_to_string.scan(word)
+    count = 0
+    if array_to_string.scan(word)
+      count += 1
+      hash[word] = count
+    end
+  end
+  return hash
+end
+
     # 1. Return every possible substring using #partition method
     # 2. Iterate over the array to check if it includes any of the substrings #scan method
     # 3. If the word is included, start a tally usind #count for how many times it is included in the array
